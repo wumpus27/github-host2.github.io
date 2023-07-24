@@ -1,9 +1,4 @@
-document.write("<div class='cookie-banner'><span class='material-symbols-outlined'>info</span>This website uses cookies to bring a better experience to you. By using this website you accept the use of cookies for a better experience on this and on our partner websites. Read more in our <a href='privacy.html'>Privacy Policy</a>.<button onclick='set_cs(this);'>Accept</button></div><br><br>");
-var this_set_es = localStorage.getItem("this_set-es");
-if (this_set_es == true) {
-  document.querySelector(':root').style.setProperty('--dashboardw', '500px');
-  document.querySelector(':root').style.setProperty('--dashboardh', '500px');
-}
+document.write("<div class='cookie-banner'><span class='material-symbols-outlined'>info</span>This website uses cookies to bring a better experience to you. By using this website you accept the use of cookies for a better experience on this and on our partner websites. Read more in our <a href='privacy.html'>Privacy Policy</a>.<button onclick='set_cs();'>Accept</button></div><br><br>");
 
 function access_dashboard() {
   var access_state = localStorage.getItem("access");
@@ -48,15 +43,17 @@ function object_state() {
   }
 }
 
-function set_es(object) {
-  localStorage.setItem("this_set-es", object.checked);
-  if (object.checked) {
-    document.querySelector(':root').style.setProperty('--dashboardw', '500px');
-  } else {
-    document.querySelector(':root').style.setProperty('--dashboardh', '500px');
+function set_es() {
+  if (document.getElementById("set-es").checked) {
+    localStorage.setItem("this_set-es", document.getElementById("set-es").checked);
+    console.log("set_es");
   }
 }
 
-function set_cs(object) {
-  localStorage.setItem("this_set-cs", object.checked);
+function set_cs() {
+  if (localStorage.getItem("this_set-es") == true) {
+    alert("lol");
+    document.querySelector(':root').style.setProperty('--dashboardw', 0);
+    document.querySelector(':root').style.setProperty('--dashboardh', 0);
+  }
 }
