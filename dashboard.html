@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>hosted</title>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="navbar">
+      <button id="access" onclick="access_dashboard();">Access Dashboard</button>
+      <button class="btn-menu btn-nav btn-outline skeleton" disabled>Create Table</button>
+      <br><br>
+      <button class="btn-menu btn-nav btn-outline skeleton" disabled>Edit Table</button>
+      <br><br>
+      <button class="btn-menu btn-nav btn-outline skeleton" disabled>Delete Table</button>
+      <br><br>
+      <button class="btn-menu btn-nav btn-outline skeleton" disabled onclick="document.location = 'settings.html';">Settings</button>
+    </div>
+  </div>
+  <br><br>
+  <div class="panel panel-default">
+    <div class="panel-content skeleton">
+      <canvas class="hidden" id="cp-average" disabled></canvas>
+      <script>
+        var ctx = document.getElementById('cp-average');
+        new Chart(ctx, {
+          type: 'pie',
+          data: {
+            labels: ['Earnings', 'Expenses', 'Sum'],
+            datasets: [{
+              label: ['Money in Dollar'],
+              data: [75, 10, 15],
+              borderWidth: 0,
+              backgroundColor: ['#adffad', '#ffadad', '#ffbdee']
+            }]
+          },
+          options: {
+            responsive: true
+          }
+        }); 
+      </script>
+      <canvas class="hidden" id="cp-earnings" disabled></canvas>
+      <script>
+        var ctx = document.getElementById('cp-earnings');
+        new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            labels: ['None'],
+            datasets: [{
+              label: 'None',
+              data: [100],
+              borderWidth: 0
+            }]
+          },
+          options: {
+            responsive: true
+          }
+        }); 
+      </script>
+    </div>
+    <br><br>
+    <div class="panel-nav nav-select">
+      <form action="view-period.php" method="POST" class="skeleton" onchange="object_state();">
+        <select onchange="object_state();" id="sort" class="hidden" disabled>
+          <option disabled>Select Period</option>
+          <option>Day</option>
+          <option>Week</option>
+          <option>Month</option>
+          <option>Year</option>
+          <option value="custom-period">Custom Period</option>
+        </select>
+        <div class="dialog-default dialog-input">
+          <label id="cpi-start" hidden>From
+            <input placeholder="Custom Period" type="date" />
+          </label>
+          <label id="cpi-end" hidden>Until
+            <input placeholder="Custom Period" type="date" />
+          </label>
+          <button class="btn btn-panel btn-outline" id="cpi-apply" onclick="submit();" hidden><span class="loader"></span></button>
+      </form>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
