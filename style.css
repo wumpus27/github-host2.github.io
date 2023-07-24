@@ -19,6 +19,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  width: var(--dashboardw);
 }
 
 .cookie-banner {

@@ -1,4 +1,9 @@
 document.write("<div class='cookie-banner'><span class='material-symbols-outlined'>info</span>This website uses cookies to bring a better experience to you. By using this website you accept the use of cookies for a better experience on this and on our partner websites. Read more in our <a href='privacy.html'>Privacy Policy</a>.<button onclick='set_cs(this);'>Accept</button></div><br><br>");
+var this_set_es = localStorage.getItem("this_set-es");
+if (this_set_es == true) {
+  document.querySelector(':root').style.setProperty('--dashboardw', '500px');
+  document.querySelector(':root').style.setProperty('--dashboardh', '500px');
+}
 
 function access_dashboard() {
   var access_state = localStorage.getItem("access");
