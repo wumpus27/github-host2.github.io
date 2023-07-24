@@ -1,4 +1,8 @@
 document.write("<div class='cookie-banner'><span class='material-symbols-outlined'>info</span>This website uses cookies to bring a better experience to you. By using this website you accept the use of cookies for a better experience on this and on our partner websites. Read more in our <a href='privacy.html'>Privacy Policy</a>.<button onclick='set_cs();'>Accept</button></div><br><br>");
+const img = "/icons/done.png";
+const text = `HEY! Your task lol is now overdue.`;
+const notification = new Notification("To do list", { body: text, icon: img });
+
 
 function access_dashboard() {
   var access_state = localStorage.getItem("access");
@@ -45,15 +49,14 @@ function object_state() {
 
 function set_es() {
   if (document.getElementById("set-es").checked) {
-    localStorage.setItem("this_set-es", document.getElementById("set-es").checked);
+    localStorage.setItem("this_set-es", "true");
     console.log("set_es");
   }
 }
 
 function set_cs() {
-  if (localStorage.getItem("this_set-es") == true) {
-    alert("lol");
-    document.querySelector(':root').style.setProperty('--dashboardw', 0);
-    document.querySelector(':root').style.setProperty('--dashboardh', 0);
+  if (localStorage.getItem("this_set-es") == "true") {
+    document.querySelector(':root').style.setProperty('--dashboardw', '350px');
+    document.querySelector(':root').style.setProperty('--dashboardh', '350px');
   }
 }
