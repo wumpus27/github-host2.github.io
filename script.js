@@ -1,7 +1,6 @@
 document.write("<div class='cookie-banner'><span class='material-symbols-outlined'>info</span>This website uses cookies to bring a better experience to you. By using this website you accept the use of cookies for a better experience on this and on our partner websites. Read more in our <a href='privacy.html'>Privacy Policy</a>.<button onclick='set_cs(this);'>Accept</button></div><br><br>");
 
 function access_dashboard() {
-  var setting = document.getElementById("expand-size");
   var access_state = localStorage.getItem("access");
   if (access_state == "true") {
     const elements = document.querySelectorAll("*");
@@ -45,7 +44,7 @@ function object_state() {
 }
 
 function set_es(object) {
-  localStorage.setItem("this_expand-size", object.checked);
+  localStorage.setItem("this_set-es", object.checked);
   if (object.checked) {
     document.querySelector(':root').style.setProperty('--dashboardw', '500px');
   } else {
@@ -54,10 +53,5 @@ function set_es(object) {
 }
 
 function set_cs(object) {
-  if (object.checked) {
-    document.querySelector(':root').style.setProperty('--dashboard-width', '100%');
-    document.querySelector(':root').style.setProperty('--dashboard-height', '100%');
-  } else {
-    document.querySelector(':root').style.setProperty('--fontcolor', 'red');
-  }
+  localStorage.setItem("this_set-cs", object.checked);
 }
