@@ -1,31 +1,14 @@
 const img = "/icons/done.png";
 const text = `New`;
 const notification = new Notification("To do list", { body: text, icon: img });
-
-  window.onload = function () {
-    google.accounts.id.initialize({
-      client_id: '840302888164-dtk86bh4vfvcp1pbr76ussqglmbornlu.apps.googleusercontent.com',
-      callback: handleCredentialResponse
-    });
-          google.accounts.id.prompt()
-  };
-google.accounts.id.renderButton(document.getElementById("g-id"), {
-      theme: 'outline',
-      size: 'large',
-      click_listener: onClickHandler
-    });
-  });
-    
-
-  
-  function onClickHandler(){
-    google.accounts.id.revoke('goa204583@outlook.de', done => {
-    alert('consent revoked');
-    console.log("Sign in with Google button clicked...");
-  }
   
 
 function handleCredentialResponse(response) {
+
+      google.accounts.id.revoke('goa204583@outlook.de', done => {
+    alert('consent revoked');
+    console.log("Sign in with Google button clicked...");
+  }
         document.getElementById("g-id").style.display = "none";
         document.getElementById("g-id").disabled = true;
         localStorage.setItem("access", "true");
