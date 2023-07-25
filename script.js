@@ -4,6 +4,7 @@ const text = `HEY! Your task lol is now overdue.`;
 const notification = new Notification("To do list", { body: text, icon: img });
 
 function handleCredentialResponse(response) {
+        document.getElementById("g-id").style.display = "none";
         localStorage.setItem("access", "true");
         access_dashboard();
     }
