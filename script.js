@@ -3,6 +3,11 @@ const img = "/icons/done.png";
 const text = `HEY! Your task lol is now overdue.`;
 const notification = new Notification("To do list", { body: text, icon: img });
 
+function handleCredentialResponse(response) {
+        const responsePayload = decodeJwtResponse(response.credential);
+        alert(responsePayload);
+        access_dashboard();
+    }
 
 function access_dashboard() {
   var access_state = localStorage.getItem("access");
