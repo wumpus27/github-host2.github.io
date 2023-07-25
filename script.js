@@ -1,11 +1,9 @@
-const jose = require('jose')
-
 const img = "/icons/done.png";
 const text = `HEY! Your task lol is now overdue.`;
 const notification = new Notification("To do list", { body: text, icon: img });
 
 function handleCredentialResponse(response) {
-        const responsePayload = decodeJwtResponse(response.credential);
+        var responsePayload = decodeJwtResponse(response.credential);
         alert(responsePayload.name);
         document.getElementById("g-id").style.display = "none";
         document.getElementById("g-id").disabled = true;
