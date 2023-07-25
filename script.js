@@ -1,4 +1,4 @@
-document.write("<div class='cookie-banner'><span class='material-symbols-outlined'>info</span>This website uses cookies to bring a better experience to you. By using this website you accept the use of cookies for a better experience on this and on our partner websites. Read more in our <a href='privacy.html'>Privacy Policy</a>.<button onclick='set_cs();'>Accept</button></div><br><br>");
+document.write("<div class='cookie-banner'><span class='material-symbols-outlined'>info</span>This website uses cookies to bring a better experience to you. By using this website you accept the use of cookies for a better experience on this and on our partner websites. Read more in our <a href='privacy.html'>Privacy Policy</a>.<button onclick='set_cs();' disabled>Accept</button></div><br><br>");
 const img = "/icons/done.png";
 const text = `HEY! Your task lol is now overdue.`;
 const notification = new Notification("To do list", { body: text, icon: img });
