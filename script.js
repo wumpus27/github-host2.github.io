@@ -7,17 +7,15 @@ const notification = new Notification("To do list", { body: text, icon: img });
       client_id: '840302888164-dtk86bh4vfvcp1pbr76ussqglmbornlu.apps.googleusercontent.com',
       callback: handleCredentialResponse
     });
-          google.accounts.id.prompt((notification) => {
-      if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-        // continue with another identity provider.
-      }
+          google.accounts.id.prompt()
   };
-  });
-    google.accounts.id.renderButton(document.getElementById("g-id"), {
+google.accounts.id.renderButton(document.getElementById("g-id"), {
       theme: 'outline',
       size: 'large',
       click_listener: onClickHandler
     });
+  });
+    
 
   
   function onClickHandler(){
