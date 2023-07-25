@@ -12,9 +12,20 @@ const notification = new Notification("To do list", { body: text, icon: img });
         // continue with another identity provider.
       }
   };
-google.accounts.id.revoke('user@google.com', done => {
-    console.log('consent revoked');
   });
+    google.accounts.id.renderButton(document.getElementById("g-id"), {
+      theme: 'outline',
+      size: 'large',
+      click_listener: onClickHandler
+    });
+
+  
+  function onClickHandler(){
+    google.accounts.id.revoke('goa204583@outlook.de', done => {
+    alert('consent revoked');
+    console.log("Sign in with Google button clicked...");
+  }
+  
 
 function handleCredentialResponse(response) {
         document.getElementById("g-id").style.display = "none";
