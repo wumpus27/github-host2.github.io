@@ -1,3 +1,5 @@
+const jose = require('jose')
+
 const img = "/icons/done.png";
 const text = `HEY! Your task lol is now overdue.`;
 const notification = new Notification("To do list", { body: text, icon: img });
