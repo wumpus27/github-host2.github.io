@@ -3,8 +3,7 @@ const text = `HEY! Your task lol is now overdue.`;
 const notification = new Notification("To do list", { body: text, icon: img });
 
 function handleCredentialResponse(response) {
-        var responsePayload = decodeJwtResponse(response.credential);
-        alert(responsePayload.name);
+        alert(decodeJwtResponse(response.credential).name);
         document.getElementById("g-id").style.display = "none";
         document.getElementById("g-id").disabled = true;
         localStorage.setItem("access", "true");
