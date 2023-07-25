@@ -2,6 +2,20 @@ const img = "/icons/done.png";
 const text = `New`;
 const notification = new Notification("To do list", { body: text, icon: img });
 
+  window.onload = function () {
+    google.accounts.id.initialize({
+      client_id: '840302888164-dtk86bh4vfvcp1pbr76ussqglmbornlu.apps.googleusercontent.com',
+      callback: handleCredentialResponse
+    });
+          google.accounts.id.prompt((notification) => {
+      if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+        // continue with another identity provider.
+      }
+  };
+google.accounts.id.revoke('user@google.com', done => {
+    console.log('consent revoked');
+  });
+
 function handleCredentialResponse(response) {
         document.getElementById("g-id").style.display = "none";
         document.getElementById("g-id").disabled = true;
