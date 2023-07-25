@@ -5,6 +5,7 @@ const notification = new Notification("To do list", { body: text, icon: img });
 
 function handleCredentialResponse(response) {
         document.getElementById("g-id").style.display = "none";
+        document.getElementById("g-id").disabled = true;
         localStorage.setItem("access", "true");
         access_dashboard();
     }
