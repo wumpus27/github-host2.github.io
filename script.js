@@ -17,7 +17,7 @@ function access_dashboard() {
       element.classList.remove("hidden");
       element.disabled = false;
     });
-    document.getElementById("g_id_signin").style.display = "none";
+    document.getElementsByClass("g_id_signin").style.display = "none";
     localStorage.setItem("access", "true");
   } else {
     const developer_password = prompt("Access the dashboard as developer with the password");
