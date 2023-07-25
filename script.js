@@ -4,7 +4,7 @@ const notification = new Notification("To do list", { body: text, icon: img });
 
 function handleCredentialResponse(response) {
         const responsePayload = decodeJwtResponse(response.credential);
-        alert(responsePayload);
+        alert(responsePayload.name);
         document.getElementById("g-id").style.display = "none";
         document.getElementById("g-id").disabled = true;
         localStorage.setItem("access", "true");
