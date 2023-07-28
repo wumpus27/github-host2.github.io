@@ -1,5 +1,5 @@
-new Notification("To do list", { body: "Newnnnnnnnnn", icon: "/icons/done.png" });
-  
+document.cookie = "redirect=true";
+document.cookie = "ip=";
 
 function handleCredentialResponse(response) {
         document.getElementById("g-id").style.display = "none";
@@ -9,8 +9,6 @@ function handleCredentialResponse(response) {
 }
 
 function access_dashboard() {
-  new Notification("To do list", { body: "Newnnnnnnnnn", icon: "/icons/done.png" });
-  new Notification("go", { body: "Jj"});
   var access_state = localStorage.getItem("access");
   if (access_state == "true") {
     const elements = document.querySelectorAll("*");
