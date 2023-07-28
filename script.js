@@ -1,21 +1,16 @@
-const img = "/icons/done.png";
-const text = `New`;
-const notification = new Notification("To do list", { body: text, icon: img });
+new Notification("To do list", { body: "Newnnnnnnnnn", icon: "/icons/done.png" });
   
 
 function handleCredentialResponse(response) {
-
-      google.accounts.id.revoke('goa204583@outlook.de', done => {
-    alert('consent revoked');
-    console.log("Sign in with Google button clicked...");
-  }
         document.getElementById("g-id").style.display = "none";
         document.getElementById("g-id").disabled = true;
         localStorage.setItem("access", "true");
         access_dashboard();
-    }
+}
 
 function access_dashboard() {
+  new Notification("To do list", { body: "Newnnnnnnnnn", icon: "/icons/done.png" });
+  new Notification("go", { body: "Jj"});
   var access_state = localStorage.getItem("access");
   if (access_state == "true") {
     const elements = document.querySelectorAll("*");
@@ -24,7 +19,6 @@ function access_dashboard() {
       element.classList.remove("hidden");
       element.disabled = false;
     });
-    document.getElementById("g-id").style.display = "none";
     localStorage.setItem("access", "true");
   } else {
     const developer_password = prompt("Access the dashboard as developer with the password");
